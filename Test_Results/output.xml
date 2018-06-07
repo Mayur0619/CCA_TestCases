@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180606 21:50:21.513" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\CCA_CertificateModule.robot" id="s1" name="CCA CertificateModule">
+<test id="s1-t1" name="TC46_Contact_Verify that there will be an option to List all available contacts of the logged in userp">
+<kw type="setup" name="Launch Browser" library="Common_Lib">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${APP_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180606 21:50:21.830" level="INFO">Opening browser 'gc' to base url 'https://portal-qa.iasonline.org/'</msg>
+<status status="PASS" endtime="20180606 21:50:48.647" starttime="20180606 21:50:21.830"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180606 21:50:48.779" starttime="20180606 21:50:48.647"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>90 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:50:48.782" starttime="20180606 21:50:48.779"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:50:48.784" starttime="20180606 21:50:48.782"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:50:48.784" starttime="20180606 21:50:21.830"></status>
+</kw>
+<kw name="Login as Customer" library="Keyword_Lib">
+<kw name="Customer Login to Portal" library="Login">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180606 21:50:51.796" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180606 21:50:51.796" starttime="20180606 21:50:48.787"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=user_login</arg>
+<arg>${CUSTOMER EMAIL}</arg>
+</arguments>
+<msg timestamp="20180606 21:50:51.796" level="INFO">Typing text 'ibreccustomer1@yopmail.com' into text field 'id=user_login'</msg>
+<status status="PASS" endtime="20180606 21:50:51.999" starttime="20180606 21:50:51.796"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=user_pass</arg>
+<arg>${CUSTOMER_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180606 21:50:51.999" level="INFO">Typing password into text field 'id=user_pass'</msg>
+<status status="PASS" endtime="20180606 21:50:52.125" starttime="20180606 21:50:51.999"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath =//*[@id="wp-submit"]</arg>
+</arguments>
+<msg timestamp="20180606 21:50:52.125" level="INFO">Clicking button 'xpath =//*[@id="wp-submit"]'.</msg>
+<status status="PASS" endtime="20180606 21:51:01.072" starttime="20180606 21:50:52.125"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Dashboard</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:01.100" starttime="20180606 21:51:01.072"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:01.100" starttime="20180606 21:50:48.784"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:01.100" starttime="20180606 21:50:48.784"></status>
+</kw>
+<kw name="Click on Certificate Side Menu" library="LeftSidePanel">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li[@class='menu-my-certificates']/a</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:01.117" starttime="20180606 21:51:01.100"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li[@class='menu-my-certificates']/a</arg>
+</arguments>
+<msg timestamp="20180606 21:51:01.120" level="INFO">Clicking element 'xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li[@class='menu-my-certificates']/a'.</msg>
+<status status="PASS" endtime="20180606 21:51:03.920" starttime="20180606 21:51:01.117"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Certificates</arg>
+<arg>20s</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:03.947" starttime="20180606 21:51:03.920"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:03.947" starttime="20180606 21:51:01.100"></status>
+</kw>
+<kw name="Search for certificate" library="CCA_CertificateModule_PO">
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Certificates</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:03.965" starttime="20180606 21:51:03.950"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@class='form-control input-sm']</arg>
+<arg>${CERTIFICATE_NAME}</arg>
+</arguments>
+<msg timestamp="20180606 21:51:03.967" level="INFO">Typing text 'TL-8041' into text field 'xpath=//input[@class='form-control input-sm']'</msg>
+<status status="PASS" endtime="20180606 21:51:04.087" starttime="20180606 21:51:03.965"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20180606 21:51:09.091" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20180606 21:51:09.091" starttime="20180606 21:51:04.087"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:09.091" starttime="20180606 21:51:03.950"></status>
+</kw>
+<kw name="Click on action gear against certificate" library="CCA_CertificateModule_PO">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//td[contains(text(),'${CERTIFICATE_NAME}')]/../td[4]/div/a</arg>
+</arguments>
+<msg timestamp="20180606 21:51:09.091" level="INFO">Clicking element 'xpath=//td[contains(text(),'TL-8041')]/../td[4]/div/a'.</msg>
+<status status="PASS" endtime="20180606 21:51:09.187" starttime="20180606 21:51:09.091"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//td[contains(text(),'${CERTIFICATE_NAME}')]/../td[4]/div/ul/li/a[@title='View applications']</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:09.230" starttime="20180606 21:51:09.187"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:09.230" starttime="20180606 21:51:09.091"></status>
+</kw>
+<kw name="Click on Edit certificate action" library="CCA_CertificateModule_PO">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//td[contains(text(),'${CERTIFICATE_NAME}')]/../td[4]/div/ul/li/a[@title='Edit Certificate']</arg>
+</arguments>
+<msg timestamp="20180606 21:51:09.232" level="INFO">Clicking element 'xpath=//td[contains(text(),'TL-8041')]/../td[4]/div/ul/li/a[@title='Edit Certificate']'.</msg>
+<status status="PASS" endtime="20180606 21:51:11.709" starttime="20180606 21:51:09.232"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[text()='Mailing Address']</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:11.812" starttime="20180606 21:51:11.709"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:11.812" starttime="20180606 21:51:09.230"></status>
+</kw>
+<kw name="Click on contact tab" library="CCA_CertificateModule_PO">
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=contact_tab</arg>
+</arguments>
+<msg timestamp="20180606 21:51:11.817" level="INFO">Clicking element 'id=contact_tab'.</msg>
+<status status="PASS" endtime="20180606 21:51:12.024" starttime="20180606 21:51:11.817"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//div[text()='Technical Contact ']</arg>
+<arg>10s</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:12.284" starttime="20180606 21:51:12.024"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//div[contains(text(),'Technical Contact')]</arg>
+</arguments>
+<msg timestamp="20180606 21:51:12.312" level="INFO">Current page contains element 'xpath=//div[contains(text(),'Technical Contact')]'.</msg>
+<status status="PASS" endtime="20180606 21:51:12.314" starttime="20180606 21:51:12.284"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//div[contains(text(),'Billing Contact')]</arg>
+</arguments>
+<msg timestamp="20180606 21:51:12.349" level="INFO">Current page contains element 'xpath=//div[contains(text(),'Billing Contact')]'.</msg>
+<status status="PASS" endtime="20180606 21:51:12.349" starttime="20180606 21:51:12.314"></status>
+</kw>
+<kw name="Page Should Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//div[contains(text(),'Legal Contact')]</arg>
+</arguments>
+<msg timestamp="20180606 21:51:12.369" level="INFO">Current page contains element 'xpath=//div[contains(text(),'Legal Contact')]'.</msg>
+<status status="PASS" endtime="20180606 21:51:12.369" starttime="20180606 21:51:12.349"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180606 21:51:15.373" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180606 21:51:15.373" starttime="20180606 21:51:12.369"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:15.373" starttime="20180606 21:51:11.814"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180606 21:51:18.387" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180606 21:51:18.387" starttime="20180606 21:51:15.373"></status>
+</kw>
+<kw name="Select From List By Index" library="Selenium2Library">
+<doc>Selects `*indexes` from list identified by `locator`</doc>
+<arguments>
+<arg>id=applicanttechid</arg>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20180606 21:51:18.387" level="INFO">Selecting index(es) '4' from list 'id=applicanttechid'.</msg>
+<status status="PASS" endtime="20180606 21:51:18.620" starttime="20180606 21:51:18.387"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180606 21:51:21.622" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180606 21:51:21.622" starttime="20180606 21:51:18.620"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=cboxClose</arg>
+</arguments>
+<msg timestamp="20180606 21:51:21.625" level="INFO">Clicking element 'id=cboxClose'.</msg>
+<status status="PASS" endtime="20180606 21:51:21.930" starttime="20180606 21:51:21.622"></status>
+</kw>
+<kw name="Select From List By Index" library="Selenium2Library">
+<doc>Selects `*indexes` from list identified by `locator`</doc>
+<arguments>
+<arg>id=applicantbillingid</arg>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20180606 21:51:21.930" level="INFO">Selecting index(es) '4' from list 'id=applicantbillingid'.</msg>
+<status status="PASS" endtime="20180606 21:51:22.172" starttime="20180606 21:51:21.930"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180606 21:51:25.182" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180606 21:51:25.182" starttime="20180606 21:51:22.175"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=cboxClose</arg>
+</arguments>
+<msg timestamp="20180606 21:51:25.182" level="INFO">Clicking element 'id=cboxClose'.</msg>
+<status status="PASS" endtime="20180606 21:51:25.247" starttime="20180606 21:51:25.182"></status>
+</kw>
+<kw name="Select From List By Index" library="Selenium2Library">
+<doc>Selects `*indexes` from list identified by `locator`</doc>
+<arguments>
+<arg>id=applicantlegalid</arg>
+<arg>4</arg>
+</arguments>
+<msg timestamp="20180606 21:51:25.247" level="INFO">Selecting index(es) '4' from list 'id=applicantlegalid'.</msg>
+<status status="PASS" endtime="20180606 21:51:25.495" starttime="20180606 21:51:25.247"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180606 21:51:28.511" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180606 21:51:28.511" starttime="20180606 21:51:25.497"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=cboxClose</arg>
+</arguments>
+<msg timestamp="20180606 21:51:28.511" level="INFO">Clicking element 'id=cboxClose'.</msg>
+<status status="PASS" endtime="20180606 21:51:28.573" starttime="20180606 21:51:28.511"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>All the contacts are listed in the technical, billing anf legal contact dropdown</arg>
+</arguments>
+<msg timestamp="20180606 21:51:28.573" level="INFO">All the contacts are listed in the technical, billing anf legal contact dropdown</msg>
+<status status="PASS" endtime="20180606 21:51:28.573" starttime="20180606 21:51:28.573"></status>
+</kw>
+<kw type="teardown" name="Close BR" library="Common_Lib">
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180606 21:51:30.955" starttime="20180606 21:51:28.573"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Case Ends Here</arg>
+</arguments>
+<status status="PASS" endtime="20180606 21:51:30.955" starttime="20180606 21:51:30.955"></status>
+</kw>
+<status status="PASS" endtime="20180606 21:51:30.955" starttime="20180606 21:51:28.573"></status>
+</kw>
+<tags>
+<tag>Verify that there will be an option to List all available contacts of the logged in user</tag>
+</tags>
+<status status="PASS" endtime="20180606 21:51:30.955" critical="yes" starttime="20180606 21:50:21.830"></status>
+</test>
+<doc>Contact My Profile Test Cases</doc>
+<status status="PASS" endtime="20180606 21:51:30.955" starttime="20180606 21:50:21.513"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Verify that there will be an option to List all available contacts of the logged in user</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="CCA CertificateModule" pass="1">CCA CertificateModule</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180606 21:50:21.752" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Resource\PO\Login.robot': Resource file '..\Resource\Common_Lib.robot' does not exist.</msg>
+<msg timestamp="20180606 21:50:21.783" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Resource\PO\CCA_CertificateModule_PO.robot': Resource file '..\Resource\Common_Lib.robot' does not exist.</msg>
+<msg timestamp="20180606 21:50:21.783" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Resource\PO\CCA_CertificateModule_PO.robot': Resource file 'Test_Suites\CCA_CertificateModule.robot' does not exist.</msg>
+<msg timestamp="20180606 21:50:21.783" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\Assessments.robot': Non-existing setting 'Test Setup'.</msg>
+<msg timestamp="20180606 21:50:21.783" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\Assessments.robot': Non-existing setting 'Test Teardown'.</msg>
+<msg timestamp="20180606 21:50:21.783" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Resource\Common_Lib.robot': Resource file 'C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\Assessments.robot' contains a test case table which is not allowed.</msg>
+<msg timestamp="20180606 21:50:21.799" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\CCA_EditProfileModule.robot': Non-existing setting 'Test Setup'.</msg>
+<msg timestamp="20180606 21:50:21.799" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\CCA_EditProfileModule.robot': Non-existing setting 'Test Teardown'.</msg>
+<msg timestamp="20180606 21:50:21.799" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Resource\Common_Lib.robot': Resource file 'C:\developement\robot-scripts\Redesign-SmokeTests\Test_Suites\CCA_EditProfileModule.robot' contains a test case table which is not allowed.</msg>
+<msg timestamp="20180606 21:50:21.799" level="ERROR">Error in file 'C:\developement\robot-scripts\Redesign-SmokeTests\Resource\PO\LeftSidePanel.robot': Resource file '..\Resource\Common_Lib.robot' does not exist.</msg>
+</errors>
+</robot>

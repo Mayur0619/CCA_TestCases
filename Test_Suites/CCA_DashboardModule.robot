@@ -58,4 +58,3 @@ TC58_TC60_Staff_Verify that the link to access the company listing would be remo
     page should not contain element   xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li/a[contains(text(),'Company')]
     page should not contain element   xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li/a[contains(text(),'Contact')]
     log   Company and Contact is not present on the menu for staff user
-	log   hello

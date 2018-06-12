@@ -46,3 +46,4 @@ TC58_TC60_Staff_Verify that the link to access the company listing would be remo
     sleep  2s
     Verify company contact menu removed
     log   Company and Contact is not present on the menu for staff user
+	log   added

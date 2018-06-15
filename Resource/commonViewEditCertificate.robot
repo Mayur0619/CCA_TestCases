@@ -1,8 +1,10 @@
 *** Settings ***
 Documentation    All the keywords for view and edit certificate or certificate details modules are here
-Library  Selenium2Library
-Library  Dialogs
+Library    Selenium2Library
+Library    Dialogs
 Resource   ../Resource/commonLib.robot
+Resource   ../TestRun/CCA_certificateModule.robot
+
 
 *** Variables ***
 ${NEW_BLD_FILENAME1}
@@ -118,17 +120,17 @@ Verify the address difference on the view difference popup
     log to console   new values successfully verified for mailing address
 
 Click on Push to CRM for certificate address changes
-    wait until element is visible   //div[text()='Changed field in Address']   15s
+    wait until element is visible   //div[text()='Changed field in Address']   30s
     mouse down   id=approve_url
     click element   id=approve_url
-    wait until element is visible   //li[text()='Certificate has been approved']   15s
+    wait until element is visible   //li[text()='Certificate has been approved']   30s
 
 
 Click on Decline for certificate address changes
-    wait until element is visible   //div[text()='Changed field in Address']   15s
+    wait until element is visible   //div[text()='Changed field in Address']   30s
     mouse down   id=decline_url
     click element   id=decline_url
-    wait until element is visible    //li[text()='Changes in the certificate have been declined']   15s
+    wait until element is visible    //li[text()='Changes in the certificate have been declined']   30s
 
 Capture old company values
     click element   id=company_tab
@@ -144,26 +146,25 @@ Edit certificate company details
     sleep  1s
     input text   id=companyName    ${NEW_COMPANY_NAME}
     Choose File  xpath=//input[@id='cmp_file']             C://Users//mayur.patidar//Desktop//Test Uploads//${NEW_BLD_FILENAME}
-    wait until element is visible   id=bld_file_name   15s
+    wait until element is visible   id=bld_file_name   50s
     click element   id=submitCompany
     sleep  2s
     mouse down   xpath=//button[text()='Continue']
     click element   xpath=//button[text()='Continue']
     sleep  3s
-    wait until element is visible   xpath=//li[text()='Certificate updates sent successfully for staff approval']   25s
+    wait until element is visible   xpath=//li[text()='Certificate updates sent successfully for staff approval']   50s
     ${NEW_BLD_FILENAME1} =   get text   xpath=//span[@class='file-icon-label upload-application-document business_license_document_property']/a
     set global variable   ${NEW_BLD_FILENAME1}
 
 Verify the company difference on the view difference popup
     element text should be    //td[text()='Company Name']/../td[2]   ${OLD_COMPANY_NAME}
-    element should be visible   xpath=//td[text()='Company Document']/../td/ul/li[contains(text(),'${OLD_BLD_FILENAME}')]
-    log   old values successfully verified for company name
-    log to console   old values successfully verified for business file name
-
     element text should be    //td[text()='Company Name']/../td[3]   ${NEW_COMPANY_NAME}
+    log   old/new values successfully verified for company name
+
+    mouse down   xpath=//td[text()='Company Document']/../td/ul/li[contains(text(),'${OLD_BLD_FILENAME}')]
+    element should be visible   xpath=//td[text()='Company Document']/../td/ul/li[contains(text(),'${OLD_BLD_FILENAME}')]
     element should be visible   xpath=//td[text()='Company Document']/../td/ul/li[contains(text(),'${NEW_BLD_FILENAME1}')]
-    log to console   new values successfully verified for company name
-    log to console   new values successfully verified for business file name
+    log   old/new values successfully verified for business file name
 
 Click on Push to CRM for certificate company changes
     wait until element is visible   //div[text()='Changed field in Company']   15s

@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Contact and Staff Dashboard CCA UAT Test Cases
-Library   Selenium2Library
-Library   Collections
+Library    Selenium2Library
+Library    Collections
 Resource   ../Resource/commonLib.robot
 Resource   ../Resource/contactDashboard.robot
 Resource   ../Resource/staffDashboard.robot
@@ -10,6 +10,13 @@ Resource   ../Resource/loginLogout.robot
 Test Setup  Launch Browser
 Test Teardown  Close BR
 
+*** Variables ***
+${BROWSER} =  gc                                            #Browser used
+${CUSTOMER EMAIL} =  ibreccustomer1@yopmail.com             #Customer email address
+${CUSTOMER_PASSWORD} =  Admin@2018                          #Customer portal password
+${APP_URL} =  https://portal-qa.iasonline.org/              #Testing URL
+${STAFF_ID} =  pbothara                                     #Staff portal username
+${STAFF_PASSWORD} =  Welcome#1                              #Staff portal password
 
 *** Test Cases ***
 TC53_Contact_Verify that the Quick Links section on the contact dashboard doesn't have the following options present
@@ -46,4 +53,3 @@ TC58_TC60_Staff_Verify that the link to access the company listing would be remo
     sleep  2s
     Verify company contact menu removed
     log   Company and Contact is not present on the menu for staff user
-	log   added

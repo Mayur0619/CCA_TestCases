@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180613 16:52:07.888" generator="Robot 3.0.4 (Python 2.7.13 on win32)">
+<suite source="C:\Users\mayur.patidar\PycharmProjects\IAS_UAT\TestRun\CCA_CR_UAT_TestCases.robot" id="s1" name="CCA CR UAT TestCases">
+<test id="s1-t1" name="TC08_Staff_Verify that once a quotation request has been applied for, the staff cannot close that request.">
+<kw type="setup" name="Launch Browser" library="commonLib">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20180613 16:52:10.171" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180613 16:52:10.171" starttime="20180613 16:52:08.153"></status>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${APP_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180613 16:52:10.171" level="INFO">Opening browser 'gc' to base url 'https://portal-qa.iasonline.org/'</msg>
+<status status="PASS" endtime="20180613 16:52:19.967" starttime="20180613 16:52:10.171"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180613 16:52:20.104" starttime="20180613 16:52:19.968"></status>
+</kw>
+<kw name="Set Selenium Timeout" library="Selenium2Library">
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<arguments>
+<arg>90 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:20.106" starttime="20180613 16:52:20.105"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets Selenium 2's default implicit wait in seconds and</doc>
+<arguments>
+<arg>5 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:20.107" starttime="20180613 16:52:20.106"></status>
+</kw>
+<status status="PASS" endtime="20180613 16:52:20.107" starttime="20180613 16:52:08.153"></status>
+</kw>
+<kw name="Login as Staff" library="loginLogout">
+<kw name="Select Radio Button" library="Selenium2Library">
+<doc>Sets selection of radio button group identified by `group_name` to `value`.</doc>
+<arguments>
+<arg>group_name=user_type</arg>
+<arg>value=staff</arg>
+</arguments>
+<msg timestamp="20180613 16:52:20.108" level="INFO">Selecting 'staff' from radio button 'user_type'.</msg>
+<status status="PASS" endtime="20180613 16:52:20.231" starttime="20180613 16:52:20.108"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=user_login</arg>
+<arg>${STAFF_ID}</arg>
+</arguments>
+<msg timestamp="20180613 16:52:20.232" level="INFO">Typing text 'pbothara' into text field 'id=user_login'</msg>
+<status status="PASS" endtime="20180613 16:52:20.371" starttime="20180613 16:52:20.232"></status>
+</kw>
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=user_pass</arg>
+<arg>${STAFF_PASSWORD}</arg>
+</arguments>
+<msg timestamp="20180613 16:52:20.372" level="INFO">Typing password into text field 'id=user_pass'</msg>
+<status status="PASS" endtime="20180613 16:52:20.508" starttime="20180613 16:52:20.371"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath =//*[@id="wp-submit"]</arg>
+</arguments>
+<msg timestamp="20180613 16:52:20.509" level="INFO">Clicking button 'xpath =//*[@id="wp-submit"]'.</msg>
+<status status="PASS" endtime="20180613 16:52:24.940" starttime="20180613 16:52:20.508"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Dashboard</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:24.969" starttime="20180613 16:52:24.940"></status>
+</kw>
+<status status="PASS" endtime="20180613 16:52:24.969" starttime="20180613 16:52:20.108"></status>
+</kw>
+<kw name="Click on Quotation Side Menu" library="commonLib">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li[@class='menu-my-quotations']/a</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:24.995" starttime="20180613 16:52:24.970"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li[@class='menu-my-quotations']/a</arg>
+</arguments>
+<msg timestamp="20180613 16:52:24.996" level="INFO">Clicking element 'xpath=//div[@id='sidebar_menu_aside']/*/*/*/*/li[@class='menu-my-quotations']/a'.</msg>
+<status status="PASS" endtime="20180613 16:52:28.236" starttime="20180613 16:52:24.996"></status>
+</kw>
+<status status="PASS" endtime="20180613 16:52:28.236" starttime="20180613 16:52:24.970"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Quotations</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:28.263" starttime="20180613 16:52:28.237"></status>
+</kw>
+<kw name="Select quotation status from dropdown on the listing page" library="contactQuotations">
+<arguments>
+<arg>application_submitted</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180613 16:52:31.275" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180613 16:52:31.275" starttime="20180613 16:52:28.264"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${QUOTE_STATUS}</arg>
+</arguments>
+<msg timestamp="20180613 16:52:31.275" level="INFO">application_submitted</msg>
+<status status="PASS" endtime="20180613 16:52:31.275" starttime="20180613 16:52:31.275"></status>
+</kw>
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>id=select_status</arg>
+<arg>${QUOTE_STATUS}</arg>
+</arguments>
+<msg timestamp="20180613 16:52:31.275" level="INFO">Selecting value(s) 'application_submitted' from list 'id=select_status'.</msg>
+<status status="PASS" endtime="20180613 16:52:31.383" starttime="20180613 16:52:31.275"></status>
+</kw>
+<status status="PASS" endtime="20180613 16:52:31.384" starttime="20180613 16:52:28.264"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180613 16:52:34.389" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180613 16:52:34.389" starttime="20180613 16:52:31.385"></status>
+</kw>
+<kw name="Verify close quote action not present" library="contactQuotations">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//tbody/tr[1]/td[1]</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:34.420" starttime="20180613 16:52:34.389"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20180613 16:52:37.422" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180613 16:52:37.422" starttime="20180613 16:52:34.420"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//tbody/tr[1]/td[1]</arg>
+</arguments>
+<msg timestamp="20180613 16:52:37.422" level="INFO">Clicking element 'xpath=//tbody/tr[1]/td[1]'.</msg>
+<status status="PASS" endtime="20180613 16:52:37.588" starttime="20180613 16:52:37.422"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>15s</arg>
+</arguments>
+<msg timestamp="20180613 16:52:52.589" level="INFO">Slept 15 seconds</msg>
+<status status="PASS" endtime="20180613 16:52:52.589" starttime="20180613 16:52:37.589"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//button[@id='cboxClose']</arg>
+</arguments>
+<msg timestamp="20180613 16:52:52.589" level="INFO">Clicking element '//button[@id='cboxClose']'.</msg>
+<status status="PASS" endtime="20180613 16:52:52.637" starttime="20180613 16:52:52.589"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20180613 16:52:57.638" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20180613 16:52:57.638" starttime="20180613 16:52:52.637"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//a[@class='tbl-icon-gear dropdown-toggle']</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:57.669" starttime="20180613 16:52:57.638"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>//a[@class='tbl-icon-gear dropdown-toggle']</arg>
+</arguments>
+<msg timestamp="20180613 16:52:57.669" level="INFO">Clicking element '//a[@class='tbl-icon-gear dropdown-toggle']'.</msg>
+<status status="PASS" endtime="20180613 16:52:57.770" starttime="20180613 16:52:57.669"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//span[text()='View']</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:52:57.845" starttime="20180613 16:52:57.770"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="Selenium2Library">
+<doc>Verifies element identified by `locator` is not found on the current page.</doc>
+<arguments>
+<arg>xpath=//a[@class='quote-close']</arg>
+</arguments>
+<msg timestamp="20180613 16:53:02.829" level="INFO">Current page does not contain element 'xpath=//a[@class='quote-close']'.</msg>
+<status status="PASS" endtime="20180613 16:53:02.830" starttime="20180613 16:52:57.845"></status>
+</kw>
+<status status="PASS" endtime="20180613 16:53:02.830" starttime="20180613 16:52:34.389"></status>
+</kw>
+<kw type="teardown" name="Close BR" library="commonLib">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1s</arg>
+</arguments>
+<msg timestamp="20180613 16:53:03.842" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20180613 16:53:03.842" starttime="20180613 16:53:02.831"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Test Case Ends Here</arg>
+</arguments>
+<status status="PASS" endtime="20180613 16:53:03.842" starttime="20180613 16:53:03.842"></status>
+</kw>
+<status status="PASS" endtime="20180613 16:53:03.842" starttime="20180613 16:53:02.831"></status>
+</kw>
+<tags>
+<tag>TC08_Staff_Verify that once a quotation request has been applied for, the staff cannot close that request.</tag>
+</tags>
+<status status="PASS" endtime="20180613 16:53:03.842" critical="yes" starttime="20180613 16:52:08.153"></status>
+</test>
+<doc>Change Requests UAT test cases</doc>
+<status status="PASS" endtime="20180613 16:53:03.842" starttime="20180613 16:52:07.888"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">TC08_Staff_Verify that once a quotation request has been applied for, the staff cannot close that request.</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="CCA CR UAT TestCases" pass="1">CCA CR UAT TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

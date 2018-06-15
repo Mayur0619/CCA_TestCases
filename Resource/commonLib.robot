@@ -1,18 +1,18 @@
 *** Settings ***
 Documentation    All the common keywords for the different test cases are here
 Library    Selenium2Library
-Library           String
+Library    String
 
 *** Variables ***
-${BROWSER} =  gc
-${CUSTOMER EMAIL} =  ibreccustomer1@yopmail.com
-${CUSTOMER_PASSWORD} =  Admin@2018
-${APP_URL} =  https://portal-qa.iasonline.org/
+#${BROWSER} =  gc
+#${CUSTOMER EMAIL} =  ibreccustomer1@yopmail.com
+#${CUSTOMER_PASSWORD} =  Admin@2018
+#${APP_URL} =  https://portal-qa.iasonline.org/
 ${Select Accreditation Program} =  Metal Building Inspection   # Building Department Accreditation  #Inspection Agency
-${STAFF_ID} =  pbothara
-${STAFF_PASSWORD} =  Welcome#1
-${ASSESSOR_EMAIL} =  ibtmassessor1@yopmail.com
-${ASSESSOR_PASSWORD} =  Admin@2017
+#${STAFF_ID} =  pbothara
+#${STAFF_PASSWORD} =  Welcome#1
+#${ASSESSOR_EMAIL} =  ibtmassessor1@yopmail.com
+#${ASSESSOR_PASSWORD} =  Admin@2017
 ${ASSESSMENT_NAME} =  AssessmentTest1-Pre-Assessment-2017
 ${ACTIVITY_TYPE} =  Field Visit           #Option shhould be "Office Visit" or "Field Visit"
 ${ACTIVITY_DURATION} =  1                  #Duartion is in number of day(s)
@@ -21,28 +21,29 @@ ${url} =  https://portal-qa.iasonline.org/assessment-details/?key=YXNtaWQ9MTQ2Ng
 ${SKILLS_PROGRAM} =  BDA
 ${calMonth} =  December
 ${calDate} =  22
-#------------------CCA certificate module----------------------
-${CERTIFICATE_NAME} =  TL-8041   #TL-7890
-${OLD_STREET}
-${OLD_COUNTRY}
-${OLD_STATE}
-${OLD_CITY}
-${OLD_ZIP}
-${NEW_STREET} =   103,st       # For example - any free text
-${NEW_COUNTRY} =  Egypt         #For example - USA; India; Greece; Italy; China
-${NEW_STATE} =  LA              # For example - NY; FL; TX; CA;
-${NEW_CITY} =  New York 1        # For example - any free text
-${NEW_ZIP} =  1231362          #Zip should be alphanumeric and of 3-9 characters
-${OLD_COMPANY_NAME}
-${OLD_BLD_FILENAME}
-${NEW_COMPANY_NAME} =  Zou Inc. 6   #${NEW_COMPANY_NAME_NUMBER}
-${NEW_BLD_FILENAME} =  Desired-Scope-of-Accreditation-for-TL_fillable-1.pdf
-${NEW_T_CONTACT_FNAME} =  Zic
-${NEW_T_CONTACT_LNAME} =  Technical User 6  #${NEW_T_CONTACT_LNAME_NUMBER}
-${NEW_T_CONTACT_EMAIL} =  zic.tuser6@yopmail.com
+##------------------CCA certificate module----------------------
+#${CERTIFICATE_NAME} =  TL-8041   #TL-7890
+#${OLD_STREET}
+#${OLD_COUNTRY}
+#${OLD_STATE}
+#${OLD_CITY}
+#${OLD_ZIP}
+#${NEW_STREET} =   103,st       # For example - any free text
+#${NEW_COUNTRY} =  Egypt         #For example - USA; India; Greece; Italy; China
+#${NEW_STATE} =  LA              # For example - NY; FL; TX; CA;
+#${NEW_CITY} =  New York 1        # For example - any free text
+#${NEW_ZIP} =  1231362          #Zip should be alphanumeric and of 3-9 characters
+#${OLD_COMPANY_NAME}
+#${OLD_BLD_FILENAME}
+#${NEW_COMPANY_NAME} =  Zou Inc. 6   #${NEW_COMPANY_NAME_NUMBER}
+#${NEW_BLD_FILENAME} =  Desired-Scope-of-Accreditation-for-TL_fillable-1.pdf
+#${NEW_T_CONTACT_FNAME} =  Zic
+#${NEW_T_CONTACT_LNAME} =  Technical User 6  #${NEW_T_CONTACT_LNAME_NUMBER}
+#${NEW_T_CONTACT_EMAIL} =  zic.tuser6@yopmail.com
 
 *** Keywords ***
 Launch Browser
+  sleep  2s
   OPEN BROWSER   ${APP_URL}   ${BROWSER}
   Maximize Browser Window
   set selenium timeout   90 seconds
@@ -52,7 +53,8 @@ Navigate URL
   go to  ${url}
 
 Close BR
-  close browser
+#  close browser
+  sleep  1s
   log to console  Test Case Ends Here
 
 Scroll Page To Location

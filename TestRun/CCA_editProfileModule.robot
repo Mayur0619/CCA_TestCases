@@ -10,8 +10,18 @@ Test Setup  Launch Browser
 Test Teardown  Close BR
 
 *** Variables ***
-#${CUSTOMER EMAIL} =  rohan.jain@yopmail.com
-#${CUSTOMER_PASSWORD} =  Admin@2018
+${BROWSER} =  gc                                            #Browser used
+${CUSTOMER EMAIL} =  ibreccustomer1@yopmail.com             #Customer email address
+${CUSTOMER_PASSWORD} =  Admin@2018                          #Customer portal password
+${APP_URL} =  https://portal-qa.iasonline.org/              #Testing URL
+${STAFF_ID} =  pbothara                                     #Staff portal username
+${STAFF_PASSWORD} =  Welcome#1                              #Staff portal password
+${ASSESSOR_EMAIL} =  ibtmassessor1@yopmail.com              #Assessor email address
+${ASSESSOR_PASSWORD} =  Admin@2017                          #Assessor portal password
+${CHANGED_CONTACT_FNAME} =  Rohan
+${CHANGED_CONTACT_LNAME} =  Joshi 1
+${CHANGED_CONTACT_PHONE} =  8881231223
+${CHANGED_CONTACT_TITLE} =  QA Engg.
 
 *** Test Cases ***
 TC61,62_Contact_Verify that a link 'My Profile" is present on the left navigation for the contact user
